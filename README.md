@@ -1,6 +1,6 @@
 <div align="center">
 
-# HONG-SON NGUYEN
+# Hi, I'm Hong-Son Nguyen 👋
 
 ### Robotics · Artificial Intelligence · Social Intelligence
 
