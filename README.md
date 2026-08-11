@@ -5,7 +5,7 @@
 ### Robotics · Artificial Intelligence · Social Intelligence
 
 **M.S. Researcher @ National Cheng Kung University (NCKU), Taiwan**  
-**Networked Robotics & Systems Lab (NRSL)**
+**Networked Robotic Systems Lab (NRSL)**
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-8BCC6A?style=for-the-badge&logo=googlechrome&logoColor=071009)](https://sontypo.github.io/portfolio/)
 [![GitHub](https://img.shields.io/badge/GitHub-sontypo-442D47?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sontypo)
