@@ -48,12 +48,12 @@ def advance(font, text, size, tracking=0.0):
     return sum(f["hmtx"][cmap[ord(c)]][0] * sc + tracking for c in text) - tracking
 
 
-def text_path(font, text, size, cx, baseline, tracking=0.0):
+def text_path(font, text, size, cx, baseline, tracking=0.0, coarse=False):
     """Whole string as one path, centred on cx."""
     x = cx - advance(font, text, size, tracking) / 2
     out = []
     for ch in text:
-        d, a = glyph(font, ch, size, x, baseline)
+        d, a = glyph(font, ch, size, x, baseline, coarse)
         out.append(d)
         x += a + tracking
     return "".join(out)
