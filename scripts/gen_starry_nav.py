@@ -2,6 +2,7 @@
 
 Usage: python3 scripts/gen_starry_nav.py > assets/starry-nav.svg
        python3 scripts/gen_starry_nav.py --cyclist > assets/starry-nav-cyclist.svg
+       python3 scripts/gen_starry_nav.py --cyclist --frameless   (used by gen_hero.py)
 
 Same robot/pedestrian simulation as gen_social_nav.py, re-staged as a night
 plaza under a "Starry Night" sky: swirling brush-stroke vortices, haloed
@@ -20,6 +21,7 @@ rng = random.Random(1889)
 # optional oncoming cyclist: crosses once per loop (twice the walking span, so it
 # spends the other half of the loop off-screen); the robot re-plans around it
 CYCLIST = "--cyclist" in sys.argv
+FRAMELESS = "--frameless" in sys.argv   # square corners, no border: for framing in gen_hero.py
 if CYCLIST:
     peds.append(dict(id="c1", p0=(W + OFF, 168), v=(-2 * (W + 2 * OFF) / T, 0.0), phase=0.35))
     gen_social_nav.traj = gen_social_nav.simulate()
@@ -558,7 +560,7 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{
 <title id="t">Human-aware navigation under a starry night{" — with a cyclist" if CYCLIST else ""}</title>
 <desc id="d">A Van Gogh–style animated painting: under a swirling starry sky, a small robot crosses a lamp-lit plaza, predicting where people will walk{" — and making room for an oncoming cyclist" if CYCLIST else ""} while keeping clear of their personal space.</desc>
 <defs>
-  <clipPath id="clip"><rect width="{W}" height="{H}" rx="14"/></clipPath>
+  <clipPath id="clip"><rect width="{W}" height="{H}" rx="{0 if FRAMELESS else 14}"/></clipPath>
   <linearGradient id="skyBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1838"/><stop offset=".6" stop-color="#1A3A78"/><stop offset="1" stop-color="#2B5596"/></linearGradient>
   <linearGradient id="groundBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B3150"/><stop offset="1" stop-color="#0C1729"/></linearGradient>
   <radialGradient id="vortexBg"><stop offset="0" stop-color="#7FA8D8"/><stop offset="1" stop-color="#2A5599"/></radialGradient>
@@ -594,9 +596,8 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{
   {robot_trail()}
   {agents()}
   {cypress()}
-  <text x="{W - 18}" y="{H - 14}" text-anchor="end" font-family="'Brush Script MT','Segoe Script','Lucida Handwriting',cursive" font-size="20" font-style="italic" fill="#D0603F" transform="rotate(-4 {W - 18} {H - 14})">Saun</text>
 </g>
-<rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="14" fill="none" stroke="#2A3550" stroke-width="2"/>
+{"" if FRAMELESS else f'<rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="14" fill="none" stroke="#2A3550" stroke-width="2"/>'}
 </svg>
 '''
 sys.stdout.write(svg)
