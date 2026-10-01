@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/hero.svg" width="100%" alt="Hong-Son (Saun) Nguyen — Robotics · Artificial Intelligence · Social Intelligence. Animated Van Gogh–style painting: under a swirling starry night sky, a small robot crosses a lamp-lit plaza, predicting where people will walk and making room for an oncoming cyclist; a night-blue plaque with gold lettering below carries the name and affiliation: M.S. Researcher @ National Cheng Kung University (NCKU), Taiwan — Networked Robotic Systems Lab (NRSL)."/>
+<img src="assets/hero.svg" width="100%" alt="Hong-Son (Saun) Nguyen — Robotics · Artificial Intelligence · Social Intelligence. Animated Van Gogh–style painting: under a swirling starry night sky, a small robot crosses a lamp-lit plaza, predicting where people will walk and making room for an oncoming cyclist; a pale-blue plaque with gold trim below carries the name and affiliation: M.S. Researcher @ National Cheng Kung University (NCKU), Taiwan — Networked Robotic Systems Lab (NRSL)."/>
 
 <a href="https://sontypo.github.io/portfolio/"><img src="assets/typewriter.svg" width="100%" alt="Building robots that understand people — not just obstacles. / Social Robot Navigation · Human–Robot Interaction / Trajectory Prediction with Graphs + State-Space Models / Social Behavior-Aware Robot Navigation via RL Policy"/></a>
 
